@@ -1,0 +1,6 @@
+[submodule "escaperoomserver/network/PJON-cython"]
+	path = escaperoomserver/network/PJON-cython
+	url = https://github.com/xlfe/PJON-cython
+[submodule "PJON-deamon/PJONdaemonlib"]
+	path = PJON-deamon/PJONdaemonlib
+	url = https://github.com/VianneyRousset/PJONdaemonlib.git
