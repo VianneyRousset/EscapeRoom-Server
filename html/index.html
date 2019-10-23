@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Escape room</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="page.css">
+    <link rel="stylesheet" type="text/css" href="scenario.css">
+    <link rel="stylesheet" type="text/css" href="timer-camera-clues.css">
+    <script data-main="scripts/main.js" src='scripts/lib/require.js'></script>
+  </head>
+  <body class="debug">
+
+    <div id="timer" class="box page center huge">
+      <span>00:00:00</span>
+    </div>
+
+    <div id="cameras-list" class="box dark">
+      <img src="img/cctv.jpe"/>
+      <img src="img/cctv.jpe"/>
+      <img src="img/cctv.jpe"/>
+      <img src="img/cctv.jpe"/>
+    </div>
+
+    <div id="camera" class="box dark">
+      <img src="img/cctv.jpe"/>
+    </div>
+
+    <div id="scenario" class="box">
+      <div class="dark metro scroll-y">
+        <div class="loading">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <svg id="metro-svg"></svg>
+      </div>
+      <div class="inspector scroll-y">
+        <div class="empty">
+          Please select a node
+        </div>
+        <div class="selection hidden">
+          <div class="header"></div>
+          <div class="page padding">
+            <p class="state mini"></p>
+            <h1></h1>
+            <p class="description">La porte doit être ouverte avec le tiroir dans la poutre baguette croissant lalala</p>
+            <h2>Conditions</h2>
+            <div class="conditions rect list select">
+              <template id="condition-template">
+                <details>
+                  <summary></summary>
+                  <p></p>
+                </details>
+              </template>
+            </div>
+            <h2>Actions</h2>
+            <div class="actions">
+              <button id="reload-node">Actualiser le nœud</button>
+              <button class="dangerous" id="activation">Forcer l'activation</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="clues" class="box page padding">
+      <div class="rect clues list long select blue scroll-y">
+        <div class="loading">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div>
+        <textarea class="rect" placeholder="Indice à envoyer..."></textarea>
+        <button class="">Envoyer</button>
+      </div>
+    </div>
+
+    <div id="devices-list" class="box list select scroll-y">
+      <template id="condition-template">
+        <details>
+          <summary></summary>
+          <p></p>
+        </details>
+      </template>
+      <div class="loading">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <div id="server-log" class="box list long scroll-y">
+      <div class="loading">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,78 @@
+{
+  "nodes": {
+    "open_chest": {
+      "i": 0,
+      "j": 1,
+      "color_index": 0,
+      "title": "Open chest",
+      "status": "complete",
+      "tracks": {}
+    },
+    "light_off": {
+      "i": 1,
+      "j": 1,
+      "color_index": 0,
+      "title": "Turn light off",
+      "status": "active",
+      "tracks": {
+        "open_chest": {
+          "i": [],
+          "color_index": 0
+        }
+      }
+    },
+    "high_temperature": {
+      "i": 2,
+      "j": 0,
+      "color_index": 1,
+      "title": "High temperature",
+      "status": "inactive",
+      "tracks": {
+        {
+          "light_off": {
+            "i": [],
+            "color_index": 0
+          }
+        }
+      },
+      "empty_fridge": {
+        "i": 2,
+        "j": 1,
+        "color_index": 0,
+        "title": "Empty the frige",
+        "status": "inactive",
+        "tracks": {
+          {
+            "light_off": {
+              "i": [],
+              "color_index": 0
+            }
+          }
+
+        },
+        "unlock_door": {
+          "i": 3,
+          "j": 0,
+          "color_index": 1,
+          "title": "Unlock the door",
+          "status": "inactive",
+          "tracks": {
+            "high_temperature": {
+              "i": [],
+              "color_index": 0
+            }
+          },
+          "paint_all": {
+            "i": 3,
+            "j": 1,
+            "color_index": 0,
+            "title": "Paint the wall",
+            "status": "inactive",
+            "tracks": {
+                "light_off": {
+                  "i": [],
+                  "color_index": 0
+                }
+            }
+          }
+        }
