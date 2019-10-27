@@ -41,21 +41,23 @@ class Style
 
 
 define ['navigation', 'metro', 'communication', 'node', 'inspector', 'devices_list', 'server_log', 'clues'], (Navigation, Metro, Communication, Node, Inspector, DevicesList, ServerLog, Clues) ->
-  class Application
-    constructor: () ->
-      @style = new Style this
-      @metro = new Metro this, 'metro-svg'
-      @inspector = new Inspector this
-      @devices_list = new DevicesList this
-      @server_log = new ServerLog this
-      @clues = new Clues this
-      @nav = new Navigation this
-      @com = new Communication this
-      @com.listen()
+	class Application
+		constructor: () ->
+		@style = new Style this
+		@metro = new Metro this, 'metro-svg'
+		@inspector = new Inspector this
+		@devices_list = new DevicesList this
+		@server_log = new ServerLog this
+		@clues = new Clues this
+		@nav = new Navigation this
+		@com = new Communication this
+		@com.listen()
+		devices = {1234 : {name : "Arthur"}}
+		@devices_list.update(devices)
 
     init: () ->
-      setTimeout((() => @nav.set_game_is_running(false)), 2000)
-      await @load_metro_nodes()
+		await setTimeout((() => @nav.set_game_is_running(false)), 2000)
+		await @load_metro_nodes()
 
     set_game_is_running: (is_running) ->
       @nav.set_game_is_running is_running
@@ -67,7 +69,7 @@ define ['navigation', 'metro', 'communication', 'node', 'inspector', 'devices_li
     load_metro_nodes: () ->
       $('#metro-svg').hide()
       $('.metro .loading').show()
-      init_tree = await @com.get_init_tree()
+	  #init_tree = await @com.get_init_tree()
       for id, n of init_tree['nodes']
         @metro.grid[id] = new Node(this, id, n)
       for id, n of init_tree['nodes']

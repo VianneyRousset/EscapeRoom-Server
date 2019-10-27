@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="page.css">
     <link rel="stylesheet" type="text/css" href="scenario.css">
     <link rel="stylesheet" type="text/css" href="timer-camera-clues.css">
-    <script data-main="scripts/main.js" src='scripts/lib/require.js'></script>
+    <script src='scripts/main.js' type='module'></script>
   </head>
   <body class="debug">
 
@@ -81,7 +81,7 @@
 
     <div id="devices-list" class="box list select scroll-y">
       <template id="condition-template">
-        <details>
+        <details class="item" uid="">
           <summary></summary>
           <p></p>
         </details>
@@ -91,6 +91,12 @@
         <div></div>
         <div></div>
       </div>
+	   <div class="error">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
     </div>
 
     <div id="server-log" class="box list long scroll-y">
